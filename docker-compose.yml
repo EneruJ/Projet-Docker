@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:80"
+    depends_on:
+      - db
+    networks:
+      - networkdocker
+    environment:
+      - DATABASE_URL=mysql://django:secret@projetdocker-db-1/myAppDB
+    
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: secretroot
+      MYSQL_USER: django
+      MYSQL_PASSWORD: secret
+      MYSQL_DATABASE: myAppDB
+    volumes:
+      - ./data:/var/lib/mysql
+    networks:
+      - networkdocker
+networks:
+  networkdocker:
+    driver: bridge
