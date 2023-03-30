@@ -10,7 +10,7 @@ services:
     networks:
       - networkdocker
     environment:
-      - DATABASE_URL=mysql://django:secret@projetdocker-db-1/myAppDB
+      - DATABASE_URL=mysql://django:secret@projet-docker-db-1/myAppDB
     
   db:
     image: mysql:latest

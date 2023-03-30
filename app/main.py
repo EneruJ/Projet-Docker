@@ -38,7 +38,7 @@ def read_items(skip: int = 0, limit: int = 100):
 @app.get("/mysql")
 async def read_root():
     try:
-        cnx = mysql.connector.connect(user='django', password='secret', host='projetdocker-db-1', database='myAppDB', port=3306, auth_plugin='mysql_native_password')
+        cnx = mysql.connector.connect(user='django', password='secret', host='projet-docker-db-1', database='myAppDB', port=3306, auth_plugin='mysql_native_password')
         cursor = cnx.cursor()
         cursor.execute("SELECT VERSION()")
         version = cursor.fetchone()
