@@ -38,5 +38,4 @@ jobs:
       - name: Push Docker image to DockerHub
         if: success()
         run: |
-          docker tag projetdocker:tag ${{ env.DOCKERHUB_USERNAME }}/projetdocker:tag
           docker push ${{ env.DOCKERHUB_USERNAME }}/projetdocker:tag
