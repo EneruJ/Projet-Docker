@@ -25,7 +25,7 @@ jobs:
         run: docker-compose build
 
       - name: Run unit tests
-        run: docker-compose run --rm app sh -c "pytest ./app/test_app.py"
+        run: pytest ./app/test_app.py
 
       - name: Push Docker image to DockerHub
         if: success()
