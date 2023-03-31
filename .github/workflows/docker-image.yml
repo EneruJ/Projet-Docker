@@ -30,9 +30,9 @@ jobs:
           password: ${{ env.DOCKERHUB_TOKEN }}
 
       - name: Pull Docker image
-        run: docker pull ${{ env.DOCKERHUB_USERNAME }}/projetdocker
+        run: docker pull ${{ env.DOCKERHUB_USERNAME }}/projetdocker:tag
       - name: Start Docker container
-        run: docker run -d -p 8080:80 ${{ env.DOCKERHUB_USERNAME }}/projetdocker
+        run: docker run -d -p 8080:80 ${{ env.DOCKERHUB_USERNAME }}/projetdocker:tag
         
       - name: Build Docker image
         run: docker-compose build
